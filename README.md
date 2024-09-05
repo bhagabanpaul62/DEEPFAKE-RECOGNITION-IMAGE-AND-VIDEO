@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # DEEPFAKE-RECOGNITION
 =======
 🕵️‍♂️ DEEPFAKE RECOGNITION
@@ -38,4 +38,4 @@ For questions or feedback, email bhagabanpauloffcial@gmail.com. 📧
 🙏 Acknowledgements
 Libraries: Thanks to TensorFlow, Keras, and other tools used in this project. 🙌
 Datasets: Sourced from Kaggle Deepfake Detection Challenge. 📚
->>>>>>> 8f75fe1172eb2baf9cebc1b7ea1b008ae6ad2d5e
+

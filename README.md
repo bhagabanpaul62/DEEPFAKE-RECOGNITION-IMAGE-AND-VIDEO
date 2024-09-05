@@ -1,6 +1,3 @@
-
-# DEEPFAKE-RECOGNITION
-=======
 🕵️‍♂️ DEEPFAKE RECOGNITION
 📖 Overview
 DEEPFAKE RECOGNITION is designed to identify deepfake videos using LSTM (Long Short-Term Memory) and ResNet (Residual Networks). This project aims to offer an accurate and reliable method for detecting manipulated media. 🎥🔍
@@ -38,4 +35,3 @@ For questions or feedback, email bhagabanpauloffcial@gmail.com. 📧
 🙏 Acknowledgements
 Libraries: Thanks to TensorFlow, Keras, and other tools used in this project. 🙌
 Datasets: Sourced from Kaggle Deepfake Detection Challenge. 📚
-

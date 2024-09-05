@@ -7,18 +7,12 @@ Deepfake Detection: Utilizes advanced LSTM and ResNet models for video analysis.
 High Accuracy: Effective in distinguishing between real and synthetic content. ✅
 User-Friendly: Easy-to-use interface for video processing and result display. 🌟
 📥 Installation
-Clone the repository: git clone https://github.com/bhagabanpaul62/DEEPFAKE-RECOGNITION.git cd DEEPFAKE-RECOGNITION
-
-Set up a virtual environment: python -m venv venv source venv/bin/activate (On Windows: venv\Scripts\activate)
-
-Install dependencies: pip install -r requirements.txt
-
-Download pre-trained models by following the instructions in models/README.md.
-
+Clone the Repository: Run git clone https://github.com/bhagabanpaul62/DEEPFAKE-RECOGNITION.git and then cd DEEPFAKE-RECOGNITION.
+Set Up a Virtual Environment: Use python -m venv venv and activate it with source venv/bin/activate (on Windows, use venv\Scripts\activate).
+Install Dependencies: Execute pip install -r requirements.txt.
+Download Pre-trained Models: Follow the instructions in models/README.md or download the model directly from Google Drive.
 🛠️ Usage
-Run the detection system with: python detect_deepfake.py --video <path_to_video>
-
-Replace <path_to_video> with the path to your video file.
+Run the detection system with python detect_deepfake.py --video <path_to_video>. Replace <path_to_video> with the path to your video file.
 
 ⚙️ Configuration
 Customize model settings in config.json. For more details, see docs/configuration.md.
@@ -26,12 +20,12 @@ Customize model settings in config.json. For more details, see docs/configuratio
 🤝 Contributing
 To contribute:
 
-Fork the repository.
-Create a new branch: git checkout -b feature/your-feature
-Make your changes.
-Commit your changes: git commit -am 'Add new feature'
-Push your branch: git push origin feature/your-feature
-Create a pull request.
+Fork the Repository 🍴
+Create a New Branch: Run git checkout -b feature/your-feature.
+Make Your Changes ✍️
+Commit Your Changes: Use git commit -am 'Add new feature'.
+Push Your Branch: Execute git push origin feature/your-feature.
+Create a Pull Request 🚀
 📝 License
 This project is licensed under the MIT License. See the LICENSE file for details.
 

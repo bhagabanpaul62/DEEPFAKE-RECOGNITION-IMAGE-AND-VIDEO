@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Deepfake_Decation</title>
+    <link rel="stylesheet" href="../static/css/style.css" />
+    <link
+      rel="shortcut icon"
+      href="../../static/images/logo.png"
+      type="image/x-icon"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="../static/javascript/script.js"></script>
+  </head>
+
+  <body>
+    <div id="main">
+      <nav id="nav">
+        <ul>
+          <li class="active"><a href="#part1">Home</a></li>
+          <li><a href="">Blog</a></li>
+          <li><a href="#part3">About Us</a></li>
+          <li><a href="#part4">Contact Us</a></li>
+        </ul>
+      </nav>
+      <section id="part1">
+        <div id="rigt">
+          <img src="../../static/images/logo.png" alt="logo" />
+          <h1>DEEPFAKE RECOGNITION</h1>
+          <p>
+            Deepfake technology refers to the use of machine learning algorithms
+            to produce synthetic media that can convincingly mimic the
+            appearance and conduct of real people
+          </p>
+
+          <a href="#part2"
+            ><button type="button" id="btn" name="btn">
+              GET STARTED &gt
+            </button></a
+          >
+        </div>
+        <div id="left">
+          <img
+            src="../../static/images/lilac_specified_background_image 1.png"
+            alt=""
+          />
+        </div>
+      </section>
+
+      <section id="part2" class="animation">
+        <div id="upl">
+          <form
+            id="uploadForm"
+            method="POST"
+            action="#"
+            enctype="multipart/form-data"
+          >
+            <label id="lav" for="fileInput">Upload your image or video</label>
+            <div id="inp">
+              <input
+                type="file"
+                id="fileInput"
+                name="file_name"
+                accept="video/*, image/*"
+                required
+              />
+            </div>
+            <button id="sub" type="submit" value="upload & predict">
+              Submit
+            </button>
+          </form>
+
+          <div id="message" class="{{ 'hidden' if not message else '' }}">
+            <h2>{{ message }}</h2>
+          </div>
+        </div>
+      </section>
+      <section id="part3">
+        <div id="text1">
+          <h1>ABOUT US</h1>
+          <p>
+            Confused if a video is original or deepfake? We have got you
+            covered. Welcome to Deepfake Video Detector! Your premier solution
+            for deepfake video detection and authenticity verification. In an
+            era where digital content can be effortlessly manipulated, our
+            mission is to safeguard the integrity of the media we consume and
+            share. Thank you so much for your support!
+          </p>
+        </div>
+        <div class="card animation">
+          <div class="rcard">
+            <div class="imgs"></div>
+          </div>
+          <div class="lcard">
+            <h1>Bhagaban Paul</h1>
+            <h3>Contribution In This Project</h3>
+            <h3>Model Training & Frontend Developer</h3>
+          </div>
+          <div class="icon">
+            <a
+              href="https://www.linkedin.com/in/bhagaban-paul-380350278/"
+              target="_blank"
+              ><img
+                src="../../static/images/Telegram.png"
+                class="im"
+                alt="imag"
+            /></a>
+            <a href="https://github.com/bhagabanpaul62" target="_blank"
+              ><img
+                id="git"
+                src="../../static/images/GitHub-Mark-ea2971cee799.png"
+                alt="imag"
+            /></a>
+          </div>
+        </div>
+        <div class="card animation">
+          <div class="rcard">
+            <div class="imgs2"></div>
+          </div>
+          <div class="lcard">
+            <h1 id="h1">Joydip Chakraborty</h1>
+            <h3>Contribution In This Project</h3>
+            <h3>Model Inference & Backend Developer</h3>
+          </div>
+          <div class="icon">
+            <a
+              href="https://www.linkedin.com/in/bhagaban-paul-380350278/"
+              target="_blank"
+              ><img
+                src="../../static/images/Telegram.png"
+                class="im"
+                alt="imag"
+            /></a>
+            <a href="https://github.com/bhagabanpaul62" target="_blank"
+              ><img
+                id="git"
+                src="../../static/images/GitHub-Mark-ea2971cee799.png"
+                alt="imag"
+            /></a>
+          </div>
+        </div>
+        <div class="card animation">
+          <div class="rcard">
+            <div class="imgs3"></div>
+          </div>
+          <div class="lcard">
+            <h1>Indrasi Das</h1>
+            <h3>Contribution In This Project</h3>
+            <h3>UIUX Designer</h3>
+          </div>
+          <div class="icon">
+            <a
+              href="https://www.linkedin.com/in/indrasi-das-434537223?lipi=urn%3Ali%3Apage%3Ad_flagship3_feed%3BXseGWrC3TSC46FvUjhBIVg%3D%3D"
+              target="_blank"
+              ><img
+                src="../../static/images/Telegram.png"
+                class="im"
+                alt="imag"
+            /></a>
+            <a href="https://github.com/indrasi-das" target="_blank"
+              ><img
+                id="git"
+                src="../../static/images/GitHub-Mark-ea2971cee799.png"
+                alt="imag"
+            /></a>
+          </div>
+        </div>
+        <div class="card animation">
+          <div class="rcard">
+            <div class="imgs4"></div>
+          </div>
+          <div class="lcard">
+            <h1 id="h11">Kaustav Sadhukhan</h1>
+            <h3>Contribution In This Project</h3>
+            <h3>Research & Documentation</h3>
+          </div>
+          <div class="icon">
+            <a
+              href="https://www.linkedin.com/in/kaustav-sadhukhan-51669a291?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              target="_blank"
+              ><img
+                src="../../static/images/Telegram.png"
+                class="im"
+                alt="imag"
+            /></a>
+            <a href="https://github.com/Ikaris2202" target="_blank"
+              ><img
+                id="git"
+                src="../../static/images/GitHub-Mark-ea2971cee799.png"
+                alt="imag"
+            /></a>
+          </div>
+        </div>
+        <div class="card animation">
+          <div class="rcard">
+            <div class="imgs5"></div>
+          </div>
+          <div class="lcard">
+            <h1>Abhik Banerjee</h1>
+            <h3>Contribution In This Project</h3>
+            <h3>Data Analyst</h3>
+          </div>
+          <div class="icon">
+            <a
+              href="https://www.linkedin.com/in/abhi-banerjee-b2a490203/"
+              target="_blank"
+              ><img
+                src="../../static/images/Telegram.png"
+                class="im"
+                alt="imag"
+            /></a>
+            <a href="https://github.com/AVI-NEWBEE" target="_blank"
+              ><img
+                id="git"
+                src="../../static/images/GitHub-Mark-ea2971cee799.png"
+                alt="imag"
+            /></a>
+          </div>
+        </div>
+        <div class="card animation">
+          <div class="rcard">
+            <div class="imgs6"></div>
+          </div>
+          <div class="lcard">
+            <h1>Prakash Mahato</h1>
+            <h3>Contribution In This Project</h3>
+            <h3>Photographer & Backup</h3>
+          </div>
+          <div class="icon">
+            <a
+              href="https://www.linkedin.com/in/prakash-mahato-3b1460325/"
+              target="_blank"
+              ><img
+                src="../../static/images/Telegram.png"
+                class="im"
+                alt="imag"
+            /></a>
+            <a href="https://github.com/prakash0012" target="_blank"
+              ><img
+                id="git"
+                src="../../static/images/GitHub-Mark-ea2971cee799.png"
+                alt="imag"
+            /></a>
+          </div>
+        </div>
+      </section>
+      <section id="part4">
+        <div id="text_p4" class="animation">
+          <h1>Work with us</h1>
+          <p>
+            This web application is created with a single goal: to create a
+            safer digital landscape where truth and transparency prevail. We
+            specialize in developing advanced tools and algorithms that detect
+            deepfake videos with remarkable accuracy.
+          </p>
+          <a href="#part3"
+            ><button id="btn2" type="button">Contact us</button></a
+          >
+        </div>
+        <form id="from" class="animation">
+          <h1>Send a Message</h1>
+          <div id="input1">
+            <input type="text" id="user" placeholder="Full Name" />
+          </div>
+          <div id="input2">
+            <input type="email" id="email" placeholder="Enter Your Email ID" />
+          </div>
+          <div id="input2">
+            <textarea id="textarea" placeholder="Type your Message"></textarea>
+          </div>
+
+          <div id="button">
+            <button id="sub23" type="button">Submit</button>
+            <button id="sub2" type="reset">Reset</button>
+          </div>
+        </form>
+      </section>
+      <footer id="fut">
+        <h1>&#64;Copyright 2024 All Rights Reserved Tech Titans</h1>
+      </footer>
+    </div>
+  </body>
+</html>

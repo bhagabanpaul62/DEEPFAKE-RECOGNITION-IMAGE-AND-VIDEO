@@ -1,37 +1,19 @@
-🕵️‍♂️ DEEPFAKE RECOGNITION
-📖 Overview
-DEEPFAKE RECOGNITION is designed to identify deepfake videos using LSTM (Long Short-Term Memory) and ResNet (Residual Networks). This project aims to offer an accurate and reliable method for detecting manipulated media. 🎥🔍
+# 🕵️‍♂️ DEEPFAKE RECOGNITION
 
-🚀 Features
-Deepfake Detection: Utilizes advanced LSTM and ResNet models for video analysis. 🤖
-High Accuracy: Effective in distinguishing between real and synthetic content. ✅
-User-Friendly: Easy-to-use interface for video processing and result display. 🌟
-📥 Installation
-Clone the Repository: Run git clone https://github.com/bhagabanpaul62/DEEPFAKE-RECOGNITION.git and then cd DEEPFAKE-RECOGNITION.
-Set Up a Virtual Environment: Use python -m venv venv and activate it with source venv/bin/activate (on Windows, use venv\Scripts\activate).
-Install Dependencies: Execute pip install -r requirements.txt.
-Download Pre-trained Models: Follow the instructions in models/README.md or download the model directly from Google Drive.
-🛠️ Usage
-Run the detection system with python detect_deepfake.py --video <path_to_video>. Replace <path_to_video> with the path to your video file.
+## 📖 Overview
 
-⚙️ Configuration
-Customize model settings in config.json. For more details, see docs/configuration.md.
+Welcome to **DEEPFAKE RECOGNITION**! This project is dedicated to detecting deepfake videos using advanced machine learning techniques. By leveraging **LSTM (Long Short-Term Memory)** and **ResNet (Residual Networks)**, our goal is to offer a reliable and accurate method for identifying manipulated media. 🎥🔍
 
-🤝 Contributing
-To contribute:
+## 🚀 Features
 
-Fork the Repository 🍴
-Create a New Branch: Run git checkout -b feature/your-feature.
-Make Your Changes ✍️
-Commit Your Changes: Use git commit -am 'Add new feature'.
-Push Your Branch: Execute git push origin feature/your-feature.
-Create a Pull Request 🚀
-📝 License
-This project is licensed under the MIT License. See the LICENSE file for details.
+- **Deepfake Detection**: Utilizes sophisticated LSTM and ResNet models for video analysis. 🤖
+- **High Accuracy**: Effectively distinguishes between real and synthetic content. ✅
+- **User-Friendly**: Provides an easy-to-use interface for video processing and result display. 🌟
 
-📬 Contact
-For questions or feedback, email bhagabanpauloffcial@gmail.com. 📧
+## 📥 Installation
 
-🙏 Acknowledgements
-Libraries: Thanks to TensorFlow, Keras, and other tools used in this project. 🙌
-Datasets: Sourced from Kaggle Deepfake Detection Challenge. 📚
+1. **Clone the Repository**
+
+   Clone the repository using:
+   ```bash
+   git clone https://github.com/bhagabanpaul62/DEEPFAKE-RECOGNITION.git

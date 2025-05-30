@@ -10,6 +10,8 @@ import app.views as views
 # Add URL rules
 app.add_url_rule(rule="/", endpoint='home', view_func=views.index, methods=['GET', 'POST'])
 
+# This file is no longer used as the entry point. Use main.py instead.
+
 if __name__ == "__main__":
     # Get port from environment variable (Render sets this) or default to 5000
     port = int(os.environ.get('PORT', 5000))

@@ -1,6 +1,7 @@
 from flask import Flask
 from app import views
 from flask import render_template,request
+import os
 
 deepfakeapp = Flask(__name__) # webserver gatewar interface wsgi
 
@@ -27,5 +28,8 @@ def no_message():
 '''
 
 if __name__ =="__main__":
-    deepfakeapp.run(debug=True)
+    # Get port from environment variable (Render sets this) or default to 5000
+    port = int(os.environ.get('PORT', 5000))
+    # Run with host='0.0.0.0' to make the server publicly available
+    deepfakeapp.run(host='0.0.0.0', port=port, debug=False)
 

@@ -9,6 +9,30 @@ import base64
 from io import BytesIO
 from PIL import Image
 import os
+import requests
+import sys
+
+def download_model(url, save_path):
+    """Download the model file from the given URL"""
+    try:
+        if not os.path.exists(os.path.dirname(save_path)):
+            os.makedirs(os.path.dirname(save_path))
+            
+        if not os.path.exists(save_path):
+            print(f"Downloading model to {save_path}...")
+            response = requests.get(url, stream=True)
+            response.raise_for_status()
+            
+            with open(save_path, 'wb') as f:
+                for chunk in response.iter_content(chunk_size=8192):
+                    if chunk:
+                        f.write(chunk)
+            print("Model downloaded successfully!")
+        else:
+            print("Model file already exists!")
+    except Exception as e:
+        print(f"Error downloading model: {e}")
+        sys.exit(1)
 
 # Define the Model class if not already defined
 class Model(nn.Module):
@@ -32,8 +56,19 @@ class Model(nn.Module):
         return fmap, self.dp(self.linear1(torch.mean(x_lstm, dim=1)))
 
 def load_model(model_path):
-    model = Model(num_classes=2).cuda()
-    state_dict = torch.load(model_path)
+    # Check if we need to download the model
+    model_url = os.getenv('MODEL_URL')
+    if model_url:
+        download_model(model_url, model_path)
+    
+    # Initialize model
+    model = Model(num_classes=2)
+    if torch.cuda.is_available():
+        model = model.cuda()
+        state_dict = torch.load(model_path)
+    else:
+        state_dict = torch.load(model_path, map_location=torch.device('cpu'))
+    
     model.load_state_dict(state_dict, strict=False)
     model.eval()
     return model

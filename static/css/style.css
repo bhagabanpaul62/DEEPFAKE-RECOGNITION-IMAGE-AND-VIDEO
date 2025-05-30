@@ -1,11 +1,22 @@
-:root {
+/* :root {
   --main-color: rgba(216, 188, 234, 1);
-  --nav-color: rgb(86, 27, 96);
+  --nav-color: #343a40;
   --nav-hover-color: rgba(27, 4, 26, 0.78);
   --element_color: #fff9d9;
   --button_color: rgba(97, 16, 135, 0.5);
   --bold-font-color: #ff7d7d;
   --head-text: rgba(26, 11, 201, 1);
+  --p-tag: rgb(84, 83, 83);
+} */
+
+:root {
+  --main-color: rgb(255, 255, 255);
+  --nav-color: #343a40;
+  --nav-hover-color: rgba(27, 4, 26, 0.78);
+  --element_color: #fff9d9;
+  --button_color: rgba(52, 58, 64, 0.7);
+  --bold-font-color: #ff7d7d;
+  --head-text: rgba(52, 58, 64, 0.7);
   --p-tag: rgb(84, 83, 83);
 }
 
@@ -35,7 +46,7 @@ body {
 
 #nav ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
 }
 
@@ -132,9 +143,6 @@ body {
 
 #part2 {
   min-height: 100vh;
-
-  margin-left: 10%;
-  margin-right: 10%;
   display: flex;
   justify-content: center;
 }
@@ -145,11 +153,11 @@ body {
   align-items: center;
   background-color: rgb(217, 227, 227);
   height: 600px;
-  width: 900px;
-  border-radius: 20px;
+  width: 1600px;
+  border-radius: 10px;
   box-shadow: 0px 0px 7px rgb(95, 95, 95);
   text-align: center;
-  margin-top: 25%;
+  margin-top: 20%;
 }
 
 #upl #lav {
@@ -460,7 +468,7 @@ body {
 }
 
 #from {
-  width: 400px;
+  width: 900px;
   height: 480px;
   background-color: aliceblue;
   border-radius: 10px;
@@ -616,12 +624,9 @@ body {
 
   #part2 {
     min-height: 100vh;
-
-    margin-left: 10%;
-    margin-right: 10%;
     display: flex;
     justify-content: center;
-  }
+}
 
   #upl {
     display: flex;
@@ -629,7 +634,7 @@ body {
     align-items: center;
     background-color: rgb(217, 227, 227);
     height: 550px;
-    width: 900px;
+    
     border-radius: 20px;
     box-shadow: 0px 0px 7px rgb(95, 95, 95);
     text-align: center;

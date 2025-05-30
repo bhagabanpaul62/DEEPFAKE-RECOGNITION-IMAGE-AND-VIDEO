@@ -5,6 +5,10 @@ import torchvision.transforms as transforms
 import torchvision.models as models
 import torch.nn as nn
 import torch.nn.functional as F
+import base64
+from io import BytesIO
+from PIL import Image
+import os
 
 # Define the Model class if not already defined
 class Model(nn.Module):
@@ -41,19 +45,40 @@ def preprocess_frame(frame):
         transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225]),
     ])
     frame = transform(frame)
+
     return frame
 
 def process_video(video_path, model, seq_length=40):
     cap = cv2.VideoCapture(video_path)
     frames = []
+    i=1
+    img_str = None
 
     while cap.isOpened():
         ret, frame = cap.read()
         if not ret:
             break
+
+        #convert it to rgb
         frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
-        frame = preprocess_frame(frame)
-        frames.append(frame)
+
+        # Save a single frame before converting it to a tensor
+        if i==40:
+            ##SAVE A single FRAME
+            # To return the frame as a base64-encoded string for HTML display
+            image_pil = Image.fromarray(frame)  # Convert back to BGR for saving
+            buffer = BytesIO()
+            ##image_pil.save('static/upload/out.jpg', format="JPEG")
+            image_pil.save(buffer, format="JPEG")
+            img_str = base64.b64encode(buffer.getvalue()).decode("utf-8")
+            #img_str = base64.b64encode(buffer.getvalue()).decode("utf-8")
+            
+        i=i+1
+        # Convert the frame to tensor
+        frame_tensor = preprocess_frame(frame)
+        frames.append(frame_tensor)
+
+
         if len(frames) == seq_length:
             break
 
@@ -68,19 +93,54 @@ def process_video(video_path, model, seq_length=40):
     with torch.no_grad():
         _, logits = model(frames)
         probabilities = F.softmax(logits, dim=1)
-        _, prediction = torch.max(probabilities, 1)
-        return prediction.item() == 0  # Assuming class 1 is "REAL"
+        confidence, prediction = torch.max(probabilities, 1)
+        res = prediction.item() == 0
+        confidence_score = confidence.item()
+        print(confidence_score*100)
+
+    return res, img_str,int(confidence_score*100)  # Return both the prediction result and the base64-encoded image string
 
 
-def pipeline(video_path,model_path):
+def process_image(image_path, model, seq_length=40):
+    img_str = None
+    frame = Image.open(image_path).convert('RGB')
+    img_str = base64.b64encode(open(image_path, "rb").read()).decode('utf-8')
+
+    # Convert the image to a tensor
+    frame_tensor = preprocess_frame(frame)
+
+    # Simulate a sequence of identical frames (because the model expects a sequence)
+    frames = [frame_tensor] * seq_length
+    frames = torch.stack(frames).unsqueeze(0).cuda()  # Shape: (1, seq_length, 3, 224, 224)
+
+    with torch.no_grad():
+        _, logits = model(frames)
+        probabilities = F.softmax(logits, dim=1)
+        confidence, prediction = torch.max(probabilities, 1)
+        res = prediction.item() == 0
+        confidence_score = confidence.item()
+        print(confidence_score * 100)
+
+    return res, img_str, int(confidence_score * 100)
+
+
+
+def pipeline(file_path, model_path):
     model = load_model(model_path)
-    res = process_video(video_path, model)
+    ext = os.path.splitext(file_path)[-1].lower()
+
+    if ext in ['.mp4', '.avi', '.mov']:
+        res, img_str, confidence_score = process_video(file_path, model)
+    elif ext in ['.jpg', '.jpeg', '.png']:
+        res, img_str, confidence_score = process_image(file_path, model)
+    else:
+        raise ValueError("Unsupported file format")
 
     if res:
-        print("Prediction: REAL")
+        print(f"Prediction: REAL with confidence {confidence_score}%")
     else:
-        print("Prediction: FAKE")
-    return res
+        print(f"Prediction: FAKE with confidence {confidence_score}%")
+    return res, img_str, confidence_score
 
 '''
 # Main script

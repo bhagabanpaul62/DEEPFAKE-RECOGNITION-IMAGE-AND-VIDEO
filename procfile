@@ -1,1 +1,1 @@
-web: gunicorn main:deepfakeapp
+web: gunicorn main:app

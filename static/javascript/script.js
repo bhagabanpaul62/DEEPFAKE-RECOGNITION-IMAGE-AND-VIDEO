@@ -61,13 +61,16 @@ document.addEventListener("DOMContentLoaded", function () {
       navbar.classList.remove("scrolled");
     }
   });
-
   //Upload area functionality
   const uploadArea = document.querySelector(".upload-area");
   const fileInput = document.getElementById("fileInput");
+  const defaultText = "Supported formats: MP4, AVI, MOV";
 
   if (uploadArea && fileInput) {
-    uploadArea.addEventListener("click", () => fileInput.click());
+    uploadArea.addEventListener("click", () => {
+      fileInput.value = ""; // Clear the input before opening file dialog
+      fileInput.click();
+    });
 
     uploadArea.addEventListener("dragover", (e) => {
       e.preventDefault();
@@ -82,16 +85,20 @@ document.addEventListener("DOMContentLoaded", function () {
       e.preventDefault();
       uploadArea.classList.remove("drag-over");
       fileInput.files = e.dataTransfer.files;
+      updateFileName();
     });
 
-    fileInput.addEventListener("change", () => {
+    const updateFileName = () => {
+      const textElement = uploadArea.querySelector("p");
       if (fileInput.files.length > 0) {
         const fileName = fileInput.files[0].name;
-        uploadArea.querySelector(
-          "p"
-        ).textContent = `Selected file: ${fileName}`;
+        textElement.textContent = `Selected file: ${fileName}`;
+      } else {
+        textElement.textContent = defaultText;
       }
-    });
+    };
+
+    fileInput.addEventListener("change", updateFileName);
   }
 
   // Form handling
@@ -136,8 +143,11 @@ document.addEventListener("DOMContentLoaded", function () {
             if (timestampSpan) {
               timestampSpan.textContent = timestamp;
             }
-
             messageContainer.innerHTML = newMessage.innerHTML;
+
+            // Reset the file input and upload area text
+            fileInput.value = "";
+            uploadArea.querySelector("p").textContent = defaultText;
 
             // Scroll to results
             messageContainer.scrollIntoView({

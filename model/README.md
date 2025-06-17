@@ -5,7 +5,7 @@ The model file `best.pt` is required for this project but is too large to be inc
 1. Download the model file:
 
    - Option 1: Request access by emailing bhagabanpauloffcial@gmail.com
-   - Option 2: [Download from Google Drive](https://drive.google.com/drive/folders/your-folder-id) (Contact repository owner for access)
+   - Option 2: [Download from Google Drive](https://drive.google.com/drive/u/6/folders/1sK5uZjO9OdxI7KMI2G9n4c0mqCEcCet6) (Contact repository owner for access)
 
 2. Place the downloaded `best.pt` file in this directory (`model/`).
 
